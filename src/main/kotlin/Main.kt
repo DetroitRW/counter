@@ -1,4 +1,22 @@
 fun main(args: Array<String>) {
+    while (true) {
+        print("Введите команду: ")
+        val reader = Scanner(System.`in`)
+        val command = reader.next()
+
+        if (command == "+") {
+            number += 1
+        }
+        if (command == "-") {
+            number -= 1
+        }
+        if (command == "="){
+            println(number)
+        }
+        if (command == "0") {
+            break
+        }
+    }
 fun menu() {
     println("Возможные команды:")
     println("- Увеличить на 1 (+)")
