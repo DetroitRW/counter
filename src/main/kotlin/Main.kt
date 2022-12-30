@@ -21,6 +21,8 @@ fun main(args: Array<String>) {
             break
         }
     }
+}
+
 fun menu() {
     println("Возможные команды:")
     println("- Увеличить на 1 (+)")
