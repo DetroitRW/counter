@@ -7,4 +7,20 @@ fun menu() {
     println("Остановить программу (0)")
 }
 
+fun counter(command: String, number: Int): Int {
+    var num = number
+    if (command == "+") {
+        num += 1
+    }
+    if (command == "-") {
+        num -= 1
+    }
+    if (command == "="){
+        println(num)
+    }
+    return num
+}
+fun scanner(): String {
+    val reader = Scanner(System.`in`)
+    return reader.next()
 }
