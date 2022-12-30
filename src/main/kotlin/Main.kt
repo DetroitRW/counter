@@ -1,4 +1,8 @@
+import java.util.Scanner
+
 fun main(args: Array<String>) {
+    menu()
+    var number = 0
     while (true) {
         print("Введите команду: ")
         val reader = Scanner(System.`in`)
