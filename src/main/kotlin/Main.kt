@@ -1,24 +1,15 @@
 import java.util.Scanner
 
 fun main(args: Array<String>) {
-    menu()
-    var number = 0
-    while (true) {
-        print("Введите команду: ")
-        val reader = Scanner(System.`in`)
-        val command = reader.next()
+    val counter = Counter()
 
-        if (command == "+") {
-            number += 1
-        }
-        if (command == "-") {
-            number -= 1
-        }
-        if (command == "="){
-            println(number)
-        }
-        if (command == "0") {
-            break
+    while (true) {
+        menu()
+
+        when(readCommand()) {
+            "+" -> counter.increment()
+            "-" -> counter.decrement()
+            "=" -> println(counter.getValue())
         }
     }
 }
@@ -29,22 +20,27 @@ fun menu() {
     println("- Уменьшить на 1 (-)")
     println("- Отобразить текущее значение (=)")
     println("Остановить программу (0)")
+    print("Введите команду: ")
 }
 
-fun counter(command: String, number: Int): Int {
-    var num = number
-    if (command == "+") {
-        num += 1
-    }
-    if (command == "-") {
-        num -= 1
-    }
-    if (command == "="){
-        println(num)
-    }
-    return num
+
+
+fun readCommand(): String {
+    return Scanner(System.`in`).next()
+
 }
-fun scanner(): String {
-    val reader = Scanner(System.`in`)
-    return reader.next()
+
+class Counter {
+    private var value: Int = 0
+    fun getValue(): Int {
+        return value
+    }
+
+    fun increment() {
+        value +=1
+    }
+
+    fun decrement() {
+        value -=1
+    }
 }
